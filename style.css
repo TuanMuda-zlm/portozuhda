@@ -1,9 +1,13 @@
-/* RESET DASAR */
+/* RESET DASAR & SMOOTH SCROLL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Membuat transisi antar menu menjadi halus */
 }
 
 body {
@@ -12,17 +16,19 @@ body {
     line-height: 1.6;
 }
 
-/* NAVBAR */
+/* NAVBAR DENGAN EFEK BAYANGAN SAAT SCROLL */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #002147; /* Biru khas kampus */
+    background-color: #002147;
     color: white;
     padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
 
 .logo {
@@ -44,28 +50,52 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 400;
+    position: relative;
     transition: color 0.3s;
+}
+
+/* Efek garis bawah animasi di menu */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .nav-links a:hover {
     color: #ffcc00;
 }
 
-/* HERO SECTION */
+/* HERO SECTION DENGAN EFEK ZOOM HALUS */
 .hero {
-    background: linear-gradient(rgba(0, 33, 71, 0.7), rgba(0, 33, 71, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-    height: 80vh;
+    background: linear-gradient(rgba(0, 33, 71, 0.75), rgba(0, 33, 71, 0.75)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 0 20px;
+    animation: fadeInBg 1.5s ease-in-out;
+}
+
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 15px;
+    animation: slideDown 1s ease;
 }
 
 .hero-content p {
@@ -74,100 +104,125 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .btn {
     display: inline-block;
     background-color: #ffcc00;
     color: #002147;
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background-color: #e6b800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
 }
 
 /* CONTAINER UMUM */
 .container {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 0 20px;
     text-align: center;
 }
 
 .container h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #002147;
     margin-bottom: 15px;
 }
 
 .section-desc {
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* FITUR KAMPUS (CARDS) */
+/* FITUR KAMPUS (CARDS) DENGAN EFEK HOVER MODERN */
 .features {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card {
     background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     flex: 1;
     min-width: 280px;
-    transition: transform 0.3s;
+    transition: all 0.4s ease;
+    border-top: 4px solid transparent;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 33, 71, 0.1);
+    border-top: 4px solid #ffcc00;
 }
 
 .card h3 {
     color: #002147;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* FAKULTAS SECTION */
 .fakultas-bg {
     background-color: #eef2f7;
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
 .fakultas-grid {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .fakultas-card {
     background: white;
-    padding: 25px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 12px;
     flex: 1;
     min-width: 300px;
     border-left: 5px solid #002147;
     text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.fakultas-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid #ffcc00;
 }
 
 .fakultas-card h4 {
     color: #002147;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 /* KONTAK */
@@ -176,11 +231,37 @@ body {
     color: #555;
 }
 
+/* TOMBOL KEMBALI KE ATAS (SCROLL TO TOP) */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ffcc00;
+    color: #002147;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #e6b800;
+    transform: scale(1.1);
+}
+
 /* FOOTER */
 footer {
     background-color: #002147;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     font-size: 0.9rem;
 }
