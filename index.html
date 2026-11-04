@@ -87,6 +87,37 @@
     <footer>
         <p>&copy; 2026 Universitas Teknologi Nusantara. Hak Cipta Dilindungi.</p>
     </footer>
+    <!-- TOMBOL KEMBALI KE ATAS -->
+    <button id="scrollTopBtn" onclick="topFunction()" title="Kembali ke atas">&#8679;</button>
 
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Universitas Teknologi Nusantara. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- SKRIP ANIMASI & INTERAKSI -->
+    <script>
+        // Menampilkan tombol "Scroll to Top" ketika halaman digulir ke bawah
+        let mybutton = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "flex";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        // Fungsi saat tombol diklik untuk kembali ke atas halaman
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>
 </body>
 </html>
