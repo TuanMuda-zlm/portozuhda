@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universitas Teknologi Nusantara - Profil Kampus</title>
+    <title>NexusGames - Portal Permainan Domino, Slot & Mahjong</title>
     <!-- Menghubungkan file CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Google untuk tampilan modern -->
+    <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,62 +14,70 @@
     <!-- NAVIGASI -->
     <header>
         <nav class="navbar">
-            <div class="logo">UTN Kampus</div>
+            <div class="logo">Nexus<span>Games</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#fakultas">Fakultas</a></li>
+                <li><a href="#games">Koleksi Game</a></li>
+                <li><a href="#features">Keunggulan</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- BAGIAN UTAMA / HERO -->
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Selamat Datang di Universitas Teknologi Nusantara</h1>
-            <p>Metak Masa Depan Gemilang Melalui Pendidikan Berkualitas dan Inovasi Teknologi.</p>
-            <a href="#about" class="btn">Jelajahi Kampus</a>
+            <h1>Pusat Hiburan Game Online Terpopuler</h1>
+            <p>Nikmati pengalaman bermain game seru mulai dari Domino klasik, Slot interaktif, hingga Mahjong Ways dengan grafis menakjubkan.</p>
+            <a href="#games" class="btn">Mulai Mainkan</a>
         </div>
     </section>
 
-    <!-- TENTANG KAMPUS -->
-    <section id="about" class="container">
-        <h2>Tentang Kampus</h2>
-        <p class="section-desc">Universitas Teknologi Nusantara (UTN) adalah institusi pendidikan tinggi terkemuka yang berfokus pada pengembangan sains, teknologi, dan karakter mahasiswa yang siap menghadapi tantangan global.</p>
+    <!-- KOLEKSI GAME (DOMINO, SLOT, MAHJONG) -->
+    <section id="games" class="container">
+        <h2>Pilihan Game Unggulan</h2>
+        <p class="section-desc">Pilih kategori permainan favorit Anda dan rasakan sensasi keseruannya sekarang juga.</p>
         
-        <div class="features">
-            <div class="card">
-                <h3>Akreditasi Unggul</h3>
-                <p>Seluruh program studi telah terakreditasi A oleh BAN-PT dengan standar kualitas nasional.</p>
+        <div class="game-grid">
+            <div class="game-card">
+                <div class="game-badge">Klasik</div>
+                <h3>Domino QiuQiu</h3>
+                <p>Game strategi kartu tradisional yang menguji ketajaman taktik dan keberuntungan dalam setiap putaran.</p>
+                <a href="#contact" class="game-btn">Mainkan Domino</a>
             </div>
-            <div class="card">
-                <h3>Fasilitas Modern</h3>
-                <p>Laboratorium komputer canggih, perpustakaan digital, dan ruang kuliah ber-AC yang nyaman.</p>
+
+            <div class="game-card">
+                <div class="game-badge hot">Populer</div>
+                <h3>Slot Games</h3>
+                <p>Beragam tema mesin slot modern dengan animasi visual berputar yang dinamis, efek suara, dan fitur bonus menarik.</p>
+                <a href="#contact" class="game-btn">Putar Slot</a>
             </div>
-            <div class="card">
-                <h3>Karir & Alumni</h3>
-                <p>Bekerja sama dengan ratusan perusahaan multinasional untuk penempatan kerja lulusan.</p>
+
+            <div class="game-card">
+                <div class="game-badge">Favorit</div>
+                <h3>Mahjong Ways</h3>
+                <p>Kombinasi ubin tradisional Tiongkok dan mekanik modern yang menawarkan kombinasi kemenangan beruntun (scatter).</p>
+                <a href="#contact" class="game-btn">Coba Mahjong</a>
             </div>
         </div>
     </section>
 
-    <!-- FAKULTAS -->
-    <section id="fakultas" class="fakultas-bg">
+    <!-- KEUNGGULAN / FITUR -->
+    <section id="features" class="feature-section">
         <div class="container">
-            <h2>Fakultas & Program Studi</h2>
-            <div class="fakultas-grid">
-                <div class="fakultas-card">
-                    <h4>Fakultas Teknik</h4>
-                    <p>Teknik Informatika, Sistem Informasi, Teknik Elektro, Teknik Sipil.</p>
+            <h2>Kenapa Memilih NexusGames?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>⚡ Responsif & Cepat</h4>
+                    <p>Optimasi performa tinggi yang berjalan mulus di perangkat komputer maupun ponsel pintar Anda.</p>
                 </div>
-                <div class="fakultas-card">
-                    <h4>Fakultas Ekonomi & Bisnis</h4>
-                    <p>Manajemen, Akuntansi, Bisnis Digital.</p>
+                <div class="feature-item">
+                    <h4>🔒 Akses Aman 24/7</h4>
+                    <p>Sistem server stabil yang siap diakses kapan pun dan di mana pun tanpa hambatan.</p>
                 </div>
-                <div class="fakultas-card">
-                    <h4>Fakultas Ilmu Komunikasi</h4>
-                    <p>Ilmu Komunikasi, Hubungan Masyarakat, Penyiaran.</p>
+                <div class="feature-item">
+                    <h4>🎁 Event & Bonus</h4>
+                    <p>Berbagai penawaran menarik, turnamen mini harian, dan hadiah eksklusif bagi pemain aktif.</p>
                 </div>
             </div>
         </div>
@@ -77,27 +85,23 @@
 
     <!-- KONTAK -->
     <section id="contact" class="container contact-section">
-        <h2>Hubungi Kami</h2>
-        <p>Punya pertanyaan seputar pendaftaran mahasiswa baru? Silakan hubungi kami.</p>
-        <p><strong>Alamat:</strong> Jl. Pendidikan No. 10, Kota Nusantara</p>
-        <p><strong>Email:</strong> info@utn.ac.id | **Telepon:** (021) 555-0199</p>
+        <h2>Layanan Bantuan 24 Jam</h2>
+        <p>Butuh bantuan seputar akun atau kendala teknis permainan? Hubungi tim support kami.</p>
+        <p><strong>Live Chat:</strong> Tersedia di pojok kanan bawah</p>
+        <p><strong>Email:</strong> support@nexusgames.com | <strong>WhatsApp:</strong> +62 812-3456-7890</p>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Universitas Teknologi Nusantara. Hak Cipta Dilindungi.</p>
-    </footer>
     <!-- TOMBOL KEMBALI KE ATAS -->
     <button id="scrollTopBtn" onclick="topFunction()" title="Kembali ke atas">&#8679;</button>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Universitas Teknologi Nusantara. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 NexusGames. Seluruh hak cipta dilindungi. Hiburan khusus usia 18+.</p>
     </footer>
 
-    <!-- SKRIP ANIMASI & INTERAKSI -->
+    <!-- SKRIP INTERAKSI & ANIMASI -->
     <script>
-        // Menampilkan tombol "Scroll to Top" ketika halaman digulir ke bawah
+        // Tombol Kembali ke Atas
         let mybutton = document.getElementById("scrollTopBtn");
 
         window.onscroll = function() {
@@ -108,7 +112,6 @@
             }
         };
 
-        // Fungsi saat tombol diklik untuk kembali ke atas halaman
         function topFunction() {
             window.scrollTo({
                 top: 0,
@@ -117,7 +120,5 @@
         }
     </script>
 
-</body>
-</html>
 </body>
 </html>
