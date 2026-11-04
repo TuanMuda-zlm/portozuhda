@@ -3,43 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Web Pertama Saya</title>
-    <style>
-        /* Anda bisa menambahkan CSS di sini untuk styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        h1 {
-            color: #0066cc;
-        }
-    </style>
+    <title>Universitas Teknologi Nusantara - Profil Kampus</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Google untuk tampilan modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- NAVIGASI -->
     <header>
-        <h1>Selamat Datang di Website Saya</h1>
-        <p>Ini adalah contoh halaman web HTML sederhana.</p>
+        <nav class="navbar">
+            <div class="logo">UTN Kampus</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#fakultas">Fakultas</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Tentang Kami</h2>
-            <p>Halaman ini dibuat menggunakan sintaks dasar HTML5.</p>
-        </section>
-    </main>
+    <!-- BAGIAN UTAMA / HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Universitas Teknologi Nusantara</h1>
+            <p>Metak Masa Depan Gemilang Melalui Pendidikan Berkualitas dan Inovasi Teknologi.</p>
+            <a href="#about" class="btn">Jelajahi Kampus</a>
+        </div>
+    </section>
 
+    <!-- TENTANG KAMPUS -->
+    <section id="about" class="container">
+        <h2>Tentang Kampus</h2>
+        <p class="section-desc">Universitas Teknologi Nusantara (UTN) adalah institusi pendidikan tinggi terkemuka yang berfokus pada pengembangan sains, teknologi, dan karakter mahasiswa yang siap menghadapi tantangan global.</p>
+        
+        <div class="features">
+            <div class="card">
+                <h3>Akreditasi Unggul</h3>
+                <p>Seluruh program studi telah terakreditasi A oleh BAN-PT dengan standar kualitas nasional.</p>
+            </div>
+            <div class="card">
+                <h3>Fasilitas Modern</h3>
+                <p>Laboratorium komputer canggih, perpustakaan digital, dan ruang kuliah ber-AC yang nyaman.</p>
+            </div>
+            <div class="card">
+                <h3>Karir & Alumni</h3>
+                <p>Bekerja sama dengan ratusan perusahaan multinasional untuk penempatan kerja lulusan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAKULTAS -->
+    <section id="fakultas" class="fakultas-bg">
+        <div class="container">
+            <h2>Fakultas & Program Studi</h2>
+            <div class="fakultas-grid">
+                <div class="fakultas-card">
+                    <h4>Fakultas Teknik</h4>
+                    <p>Teknik Informatika, Sistem Informasi, Teknik Elektro, Teknik Sipil.</p>
+                </div>
+                <div class="fakultas-card">
+                    <h4>Fakultas Ekonomi & Bisnis</h4>
+                    <p>Manajemen, Akuntansi, Bisnis Digital.</p>
+                </div>
+                <div class="fakultas-card">
+                    <h4>Fakultas Ilmu Komunikasi</h4>
+                    <p>Ilmu Komunikasi, Hubungan Masyarakat, Penyiaran.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact" class="container contact-section">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan seputar pendaftaran mahasiswa baru? Silakan hubungi kami.</p>
+        <p><strong>Alamat:</strong> Jl. Pendidikan No. 10, Kota Nusantara</p>
+        <p><strong>Email:</strong> info@utn.ac.id | **Telepon:** (021) 555-0199</p>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Web Saya. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 Universitas Teknologi Nusantara. Hak Cipta Dilindungi.</p>
     </footer>
-
-    <script>
-        // Anda bisa menambahkan JavaScript di sini jika diperlukan
-        console.log("Website berhasil dimuat!");
-    </script>
 
 </body>
 </html>
