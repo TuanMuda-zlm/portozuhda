@@ -1,124 +1,187 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusGames - Portal Permainan Domino, Slot & Mahjong</title>
-    <!-- Menghubungkan file CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuhda Lembahmanah – Profil Mahasiswa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #e4eaf0;
+      --ink: #14213d;
+      --muted: #4a5a73;
+      --card: #ffffff;
+      --blue: #1769aa;
+      --rec: #d62839;
+      --line: #c5d0dc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Instrument Sans", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 32px 20px 56px;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 12px 0 40px;
+    }
+    .frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: var(--ink);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .frame .fallback {
+      position: absolute; inset: 0;
+      display: none; align-items: center; justify-content: center;
+      font-family: "Bricolage Grotesque", Arial, sans-serif;
+      font-weight: 800; font-size: 72px; color: #8fb4d6;
+    }
+    .frame.no-photo .fallback { display: flex; }
+    .frame.no-photo img { display: none; }
+    .frame::before, .frame::after {
+      content: ""; position: absolute; width: 28px; height: 28px;
+      border: 3px solid #fff; z-index: 2; pointer-events: none;
+    }
+    .frame::before { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+    .frame::after { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+    .rec {
+      position: absolute; top: 14px; right: 14px; z-index: 2;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(20, 33, 61, .78); color: #fff;
+      font-size: 12px; font-weight: 600; letter-spacing: .04em;
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .rec i {
+      width: 9px; height: 9px; border-radius: 50%; background: var(--rec);
+      animation: blink 1.6s steps(1) infinite;
+    }
+    @keyframes blink { 50% { opacity: .15; } }
+
+    h1 {
+      font-family: "Bricolage Grotesque", Arial, sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.02;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .role { margin-top: 14px; font-size: 1.1rem; font-weight: 500; color: var(--blue); }
+    .intro { margin-top: 10px; max-width: 46ch; color: var(--muted); }
+
+    /* Sections */
+    section {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin-top: 20px;
+    }
+    h2 {
+      font-family: "Bricolage Grotesque", Arial, sans-serif;
+      font-weight: 600; font-size: 1.35rem; margin-bottom: 14px;
+    }
+    section p { max-width: 62ch; }
+
+    .info { list-style: none; border-top: 1px solid var(--line); }
+    .info li {
+      display: grid; grid-template-columns: 150px 1fr; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--line);
+    }
+    .info span:first-child { color: var(--muted); }
+
+    .hobi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .hobi div { border-left: 3px solid var(--blue); padding: 2px 0 2px 14px; }
+    .hobi strong { display: block; font-weight: 600; }
+    .hobi span { color: var(--muted); font-size: .95rem; }
+
+    .kontak { display: flex; flex-wrap: wrap; gap: 12px; }
+    .kontak a {
+      display: inline-block; padding: 10px 18px; border-radius: 8px;
+      background: var(--ink); color: #fff; text-decoration: none; font-weight: 500;
+    }
+    .kontak a:hover { background: var(--blue); }
+    .kontak a:focus-visible { outline: 3px solid var(--rec); outline-offset: 2px; }
+
+    footer { margin-top: 28px; text-align: center; font-size: .9rem; color: var(--muted); }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; gap: 24px; }
+      .frame { max-width: 260px; }
+      .hobi { grid-template-columns: 1fr; }
+      .info li { grid-template-columns: 1fr; gap: 0; }
+      section { padding: 22px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rec i { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
 
-    <!-- NAVIGASI -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Nexus<span>Games</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#games">Koleksi Game</a></li>
-                <li><a href="#features">Keunggulan</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
+    <header class="hero">
+      <div class="frame" id="frame">
+        <img src="foto.jpg" alt="Foto Zuhda Lembahmanah"
+             onerror="document.getElementById('frame').classList.add('no-photo')">
+        <div class="fallback" aria-hidden="true">ZL</div>
+        <div class="rec"><i></i>REC</div>
+      </div>
+      <div>
+        <h1>Zuhda<br>Lembahmanah</h1>
+        <p class="role">Mahasiswa Manajemen Informasi Komunikasi, STMM</p>
+        <p class="intro">Saya membuat konten, mengedit video, dan sedang belajar bagaimana sebuah website bisa tampil di internet.</p>
+      </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Pusat Hiburan Game Online Terpopuler</h1>
-            <p>Nikmati pengalaman bermain game seru mulai dari Domino klasik, Slot interaktif, hingga Mahjong Ways dengan grafis menakjubkan.</p>
-            <a href="#games" class="btn">Mulai Mainkan</a>
-        </div>
+    <section>
+      <h2>Tentang saya</h2>
+      <p>Saya mahasiswa semester 3 Program Studi Manajemen Informasi Komunikasi (MIK) di STMM. Saya suka mengubah ide menjadi konten yang bisa dilihat orang lain, mulai dari merekam, menyusun gambar, sampai mengedit. Saat ini saya sedang belajar Cloud Computing, dan halaman ini adalah hasil praktik mempublikasikan website lewat GitHub Pages.</p>
     </section>
 
-    <!-- KOLEKSI GAME (DOMINO, SLOT, MAHJONG) -->
-    <section id="games" class="container">
-        <h2>Pilihan Game Unggulan</h2>
-        <p class="section-desc">Pilih kategori permainan favorit Anda dan rasakan sensasi keseruannya sekarang juga.</p>
-        
-        <div class="game-grid">
-            <div class="game-card">
-                <div class="game-badge">Klasik</div>
-                <h3>Domino QiuQiu</h3>
-                <p>Game strategi kartu tradisional yang menguji ketajaman taktik dan keberuntungan dalam setiap putaran.</p>
-                <a href="#contact" class="game-btn">Mainkan Domino</a>
-            </div>
-
-            <div class="game-card">
-                <div class="game-badge hot">Populer</div>
-                <h3>Slot Games</h3>
-                <p>Beragam tema mesin slot modern dengan animasi visual berputar yang dinamis, efek suara, dan fitur bonus menarik.</p>
-                <a href="#contact" class="game-btn">Putar Slot</a>
-            </div>
-
-            <div class="game-card">
-                <div class="game-badge">Favorit</div>
-                <h3>Mahjong Ways</h3>
-                <p>Kombinasi ubin tradisional Tiongkok dan mekanik modern yang menawarkan kombinasi kemenangan beruntun (scatter).</p>
-                <a href="#contact" class="game-btn">Coba Mahjong</a>
-            </div>
-        </div>
+    <section>
+      <h2>Identitas</h2>
+      <ul class="info">
+        <li><span>Nama</span><span>Zuhda Lembahmanah</span></li>
+        <li><span>Program studi</span><span>Manajemen Informasi Komunikasi (MIK)</span></li>
+        <li><span>Kampus</span><span>STMM</span></li>
+        <li><span>Semester</span><span>3</span></li>
+      </ul>
     </section>
 
-    <!-- KEUNGGULAN / FITUR -->
-    <section id="features" class="feature-section">
-        <div class="container">
-            <h2>Kenapa Memilih NexusGames?</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h4>⚡ Responsif & Cepat</h4>
-                    <p>Optimasi performa tinggi yang berjalan mulus di perangkat komputer maupun ponsel pintar Anda.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🔒 Akses Aman 24/7</h4>
-                    <p>Sistem server stabil yang siap diakses kapan pun dan di mana pun tanpa hambatan.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🎁 Event & Bonus</h4>
-                    <p>Berbagai penawaran menarik, turnamen mini harian, dan hadiah eksklusif bagi pemain aktif.</p>
-                </div>
-            </div>
-        </div>
+    <section>
+      <h2>Hobi dan minat</h2>
+      <div class="hobi">
+        <div><strong>Membuat konten</strong><span>Mengembangkan ide dan menyusunnya menjadi konten.</span></div>
+        <div><strong>Editing</strong><span>Merapikan hasil rekaman menjadi karya yang enak ditonton.</span></div>
+        <div><strong>Videografi</strong><span>Merekam gambar bergerak dan bercerita lewat video.</span></div>
+      </div>
     </section>
 
-    <!-- KONTAK -->
-    <section id="contact" class="container contact-section">
-        <h2>Layanan Bantuan 24 Jam</h2>
-        <p>Butuh bantuan seputar akun atau kendala teknis permainan? Hubungi tim support kami.</p>
-        <p><strong>Live Chat:</strong> Tersedia di pojok kanan bawah</p>
-        <p><strong>Email:</strong> support@nexusgames.com | <strong>WhatsApp:</strong> +62 812-3456-7890</p>
+    <section>
+      <h2>Kontak</h2>
+      <div class="kontak">
+        <a href="https://www.instagram.com/zuhda_lm" target="_blank" rel="noopener">Instagram @zuhda_lm</a>
+        <a href="https://www.tiktok.com/@brody.zlm" target="_blank" rel="noopener">TikTok @brody.zlm</a>
+      </div>
     </section>
 
-    <!-- TOMBOL KEMBALI KE ATAS -->
-    <button id="scrollTopBtn" onclick="topFunction()" title="Kembali ke atas">&#8679;</button>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 NexusGames. Seluruh hak cipta dilindungi. Hiburan khusus usia 18+.</p>
-    </footer>
-
-    <!-- SKRIP INTERAKSI & ANIMASI -->
-    <script>
-        // Tombol Kembali ke Atas
-        let mybutton = document.getElementById("scrollTopBtn");
-
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                mybutton.style.display = "flex";
-            } else {
-                mybutton.style.display = "none";
-            }
-        };
-
-        function topFunction() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
+    <footer>Dibuat untuk praktik Teknologi Internet dan Cloud Computing</footer>
+  </div>
 </body>
 </html>
